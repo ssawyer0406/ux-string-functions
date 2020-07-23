@@ -10,7 +10,12 @@
 
 function isEmptyString(string) {
   let result;
-  // Add your code here.
+
+  if (string.length > 0) {
+    result = false;
+  } else {
+    result = true;
+  }
   return result;
 }
 
@@ -38,9 +43,7 @@ console.log(isEmptyString(" ") === false);
 */
 
 function containsWordJava(text) {
-  let result;
-  // Add your code here.
-  return result;
+  return text.toLowerCase().indexOf("java") > -1;
 }
 
 /* 
@@ -68,7 +71,10 @@ console.log(containsWordJava("JAVA IS FUN :D") === true);
 */
 
 function trimSentence(text, maxLength) {
-  // Add your code here.
+  let newLength = maxLength - 3;
+  if (text.length > newLength) {
+    return text.slice(0, newLength) + "...";
+  }
   return text;
 }
 
@@ -89,17 +95,19 @@ console.log(
 );
 console.log("* Check for shorter than the limit");
 console.log(trimSentence("Short", 16) === "Short");
-
 /* ------------------------------------------------
   Exercise Four
-
   Given the text, the goal is to limit the number of characters to maxLength and add an ellipsis "..." to the end.
   Note that the length of the string should be maxLength including the ellipsis.  This means you'll have to subtract the lenght of the ellipsis fom the maxLength to know how many characters there should be.
   Hint: Look at the "slice" method.  You can set the first argument to zero to make it start at the beginning of the string.   (Watch out that slice returns a new string! You need to assign it to something)
 */
+//
 
 function trimSentence(text, maxLength) {
-  // Add your code here.
+  let newLength = maxLength - 3;
+  if (text.length > newLength) {
+    return text.slice(0, newLength) + "...";
+  }
   return text;
 }
 
